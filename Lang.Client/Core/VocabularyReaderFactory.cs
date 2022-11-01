@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using Lang.Client.Core.FrequencyReaders;
 
 namespace Lang.Client.Core;
 
@@ -11,12 +12,12 @@ public class VocabularyReaderFactory
         _httpClientFactory = httpClientFactory;
     }
 
-    public VocabularyReader Create(string htmlContent, string word)
+    public VocabularyFrequencyDataReader Create(string htmlContent, string word)
     {
-        return new VocabularyReader(htmlContent, word);
+        return new VocabularyFrequencyDataReader(htmlContent, word);
     }
 
-    public VocabularyReader Create(string word)
+    public VocabularyFrequencyDataReader Create(string word)
     {
         var httpClient = _httpClientFactory.CreateClient();
 

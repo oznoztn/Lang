@@ -1,11 +1,14 @@
-﻿namespace Lang.Client.Core;
+﻿using Lang.Client.Core.FrequencyDataParsers.Abstractions;
+using Lang.Client.Core.FrequencyReaders.Models;
 
-public interface IFrequencyDataReader
+namespace Lang.Client.Core.FrequencyReaders;
+
+public interface IFrequencyDataReader<TParseResult> where TParseResult : IParseResult
 {
     /// <summary>
     /// İndirilmek istenen kelime Vocabulary'de bulunmadığında, sunucudan cevaben kelimeye bir kelimenin sayfası dönüyor.
     /// Dolayısıyla indirilen sayfanın daima istediğimiz kelimeye ait oluşturulduğundan emin olamayız.
     /// </summary>
     /// <returns></returns>
-    WordFrequencyResult GetFrequencyData(string htmlContent);
+    TParseResult GetFrequencyData(string htmlContent);
 }
