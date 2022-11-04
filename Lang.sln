@@ -7,21 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lang.Client", "Lang.Client\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lang.Core", "Lang.Core\Lang.Core.csproj", "{854C62E2-7BF9-4CE5-A94A-7037DF07C2BA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{5D00DAD0-1F6A-4DA4-BA73-4FF7D9BAC717}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wordlists", "wordlists", "{6632D20A-82A8-4CE0-9BCF-FBC89F74B205}"
-	ProjectSection(SolutionItems) = preProject
-		files\wordlists\Longman Communication 3000.txt = files\wordlists\Longman Communication 3000.txt
-		files\wordlists\Oxford 3000.txt = files\wordlists\Oxford 3000.txt
-		files\wordlists\Oxford 3k + Oxford 5k + Longman Communication 3k.txt = files\wordlists\Oxford 3k + Oxford 5k + Longman Communication 3k.txt
-		files\wordlists\Oxford 5000.txt = files\wordlists\Oxford 5000.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "freq", "freq", "{80B7C6B2-5BBF-46FA-9687-65E1AC196728}"
-	ProjectSection(SolutionItems) = preProject
-		files\freq\vocabulary.com.json = files\freq\vocabulary.com.json
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +24,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6632D20A-82A8-4CE0-9BCF-FBC89F74B205} = {5D00DAD0-1F6A-4DA4-BA73-4FF7D9BAC717}
-		{80B7C6B2-5BBF-46FA-9687-65E1AC196728} = {5D00DAD0-1F6A-4DA4-BA73-4FF7D9BAC717}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9DEE0D0F-D7B9-4AB3-972D-337DB9C12E70}
