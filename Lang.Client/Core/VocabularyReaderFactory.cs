@@ -1,5 +1,8 @@
-﻿using System.Net.Http;
-using Lang.Client.Core.FrequencyReaders;
+﻿using Lang.Client.Core.Enums;
+using Lang.Client.Core.FrequencyDataParsers;
+using Lang.Client.Core.Helpers;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Lang.Client.Core;
 
@@ -12,17 +15,22 @@ public class VocabularyReaderFactory
         _httpClientFactory = httpClientFactory;
     }
 
-    public VocabularyFrequencyDataReader Create(string htmlContent, string word)
+    public VocabularyParser Create(string htmlContent, string word)
     {
-        return new VocabularyFrequencyDataReader(htmlContent, word);
+        return new VocabularyParser(htmlContent, word);
     }
 
-    public VocabularyFrequencyDataReader Create(string word)
+    public async Task<VocabularyParser> Create(string word)
     {
-        var httpClient = _httpClientFactory.CreateClient();
+        HttpResponseMessage r = 
+            await _httpClientFactory
+                .CreateClient()
+                .GetAsync(UriHelper.CreatedAddress(Source.Vocabulary, word));
 
-        this.Create("content", word);
+        string c = await r.Content.ReadAsStringAsync();
 
-        return null;
+        VocabularyParser p = this.Create(c, word);
+
+        return p;
     }
 }
